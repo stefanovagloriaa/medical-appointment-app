@@ -10,6 +10,11 @@ const Register = () => {
 
   const formSubmithandler = (event) => {
     event.preventDefault();
+
+    const firstName = firstNameRef.current.value;
+    const lastName = lastNameRef.current.value;
+    const password = passwordRef.current.value;
+    const repeatedPassword = repeatedPasswordRef.current.value;
   };
 
   return (
