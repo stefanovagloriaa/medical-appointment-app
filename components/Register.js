@@ -1,10 +1,15 @@
+import { useRef } from "react";
 import { Fragment } from "react";
 import classes from "./Register.module.css";
 
 const Register = () => {
+  const firstNameRef = useRef();
+  const lastNameRef = useRef();
+  const passwordRef = useRef();
+  const repeatedPasswordRef = useRef();
+
   const formSubmithandler = (event) => {
     event.preventDefault();
-    console.log("form submission..");
   };
 
   return (
@@ -13,19 +18,27 @@ const Register = () => {
         <label className={classes.labelStyle} htmlFor="firstName">
           First name:
         </label>
-        <input className={classes.inputStyle} id="firstName" />
+        <input
+          ref={firstNameRef}
+          className={classes.inputStyle}
+          id="firstName"
+        />
         <label className={classes.labelStyle} htmlFor="lastName">
           Last name:
         </label>
-        <input className={classes.inputStyle} id="lastName" />
+        <input ref={lastNameRef} className={classes.inputStyle} id="lastName" />
         <label className={classes.labelStyle} htmlFor="password">
           Password:
         </label>
-        <input className={classes.inputStyle} id="password" />
+        <input ref={passwordRef} className={classes.inputStyle} id="password" />
         <label className={classes.labelStyle} htmlFor="repeatPassword">
           Repeat password:
         </label>
-        <input className={classes.inputStyle} id="repeatPassword" />
+        <input
+          ref={repeatedPasswordRef}
+          className={classes.inputStyle}
+          id="repeatPassword"
+        />
         <button>Create Account</button>
       </form>
     </Fragment>
