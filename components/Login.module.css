@@ -1,0 +1,22 @@
+.formStyle {
+    text-align: center;
+    padding: 50px;
+    border: 1px solid;
+    margin-left: 470px;
+    margin-right: 470px;
+    margin-top: 50px;
+    border-radius: 15%;
+}
+
+.labelStyle {
+    padding: 20px;
+}
+
+.inputStyle {
+    width: 90%;
+    padding: 6px;
+    margin: 8px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 15px;
+}
