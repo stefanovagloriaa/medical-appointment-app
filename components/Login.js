@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import Link from "next/link";
 import classes from "./Login.module.css";
 
 const Login = () => {
@@ -14,6 +15,9 @@ const Login = () => {
         </label>
         <input className={classes.inputStyle} id="password" />
         <button>LogIn</button>
+        <Link href="/signUp">
+          <button>You have not account yet?</button>
+        </Link>
       </form>
     </Fragment>
   );
