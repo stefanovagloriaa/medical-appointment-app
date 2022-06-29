@@ -1,9 +1,12 @@
 import { Fragment } from "react";
+import AddressNavigation from "./AddressNavigation";
+import MainNavigation from "./MainNavigation";
 
 const Navigation = () => {
   return (
     <Fragment>
-      <h1>Navigation</h1>
+      <AddressNavigation />
+      <MainNavigation />
     </Fragment>
   );
 };
