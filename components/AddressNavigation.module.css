@@ -1,0 +1,12 @@
+.element span {
+    margin: 22px;
+    text-decoration: none;
+    color: black;
+}
+
+.element {
+    margin: 33px;
+    border-style: solid;
+    padding: 20px;
+    border-width: 1px;
+}
