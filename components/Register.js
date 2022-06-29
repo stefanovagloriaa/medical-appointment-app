@@ -1,11 +1,15 @@
 import { Fragment } from "react";
-import Link from "next/link";
 import classes from "./Register.module.css";
 
 const Register = () => {
+  const formSubmithandler = (event) => {
+    event.preventDefault();
+    console.log("form submission..");
+  };
+
   return (
     <Fragment>
-      <form className={classes.formStyle}>
+      <form className={classes.formStyle} onSubmit={formSubmithandler}>
         <label className={classes.labelStyle} htmlFor="firstName">
           First name:
         </label>
@@ -22,9 +26,7 @@ const Register = () => {
           Repeat password:
         </label>
         <input className={classes.inputStyle} id="repeatPassword" />
-        <Link href="/signUp">
-          <button>Create Account</button>
-        </Link>
+        <button>Create Account</button>
       </form>
     </Fragment>
   );
