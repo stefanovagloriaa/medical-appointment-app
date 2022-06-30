@@ -1,11 +1,22 @@
 import { Fragment } from "react";
+import { useRef } from "react";
 import Link from "next/link";
 import classes from "./Login.module.css";
 
 const Login = () => {
+  const usernameRef = useRef();
+  const passwordRef = useRef();
+
+  const formSubmitHandler = (event) => {
+    event.preventDefault();
+
+    const username = usernameRef.current.value;
+    const password = passwordRef.current.value;
+  };
+
   return (
     <Fragment>
-      <form className={classes.formStyle}>
+      <form onSubmit={formSubmitHandler} className={classes.formStyle}>
         <label className={classes.labelStyle} htmlFor="username">
           Username
         </label>
