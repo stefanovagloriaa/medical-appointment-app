@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { Fragment } from "react";
-import { MongoClient } from "mongodb";
 import classes from "./Register.module.css";
 
 const Register = () => {
@@ -15,9 +14,8 @@ const Register = () => {
     const firstName = firstNameRef.current.value;
     const lastName = lastNameRef.current.value;
     const password = passwordRef.current.value;
-    const repeatedPassword = repeatedPasswordRef.current.value;
 
-    const response = await fetch("/api/createUser", {
+    await fetch("/api/createUser", {
       method: "POST",
       body: JSON.stringify({ firstName, lastName, password }),
       headers: {
@@ -25,7 +23,7 @@ const Register = () => {
       },
     });
 
-    console.log("done");
+    console.log(response);
   };
 
   return (
