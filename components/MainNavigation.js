@@ -1,10 +1,20 @@
 import { Fragment, useState } from "react";
 import Link from "next/link";
 import classes from "./MainNavigation.module.css";
+import { useDispatch } from "react-redux";
+import { authActions } from "../store";
 import { useSelector } from "react-redux";
 
 const MainNavigation = () => {
   const isAuth = useSelector((state) => state.auth.isAuth);
+
+  const dispatch = useDispatch();
+
+  const logoutHandler = (event) => {
+    event.preventDefault();
+
+    dispatch(authActions.logout());
+  };
 
   return (
     <Fragment>
@@ -27,6 +37,11 @@ const MainNavigation = () => {
         {!isAuth && (
           <Link href="/login">
             <li>Вход</li>
+          </Link>
+        )}
+        {isAuth && (
+          <Link href="/logout">
+            <li onClick={logoutHandler}>Изход</li>
           </Link>
         )}
       </div>
