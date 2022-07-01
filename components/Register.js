@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { Fragment } from "react";
+import { useRouter } from "next/router";
 import classes from "./Register.module.css";
 
 const Register = () => {
@@ -7,6 +8,8 @@ const Register = () => {
   const usernameRef = useRef();
   const passwordRef = useRef();
   const repeatedPasswordRef = useRef();
+
+  const router = useRouter();
 
   const formSubmithandler = async (event) => {
     event.preventDefault();
@@ -30,8 +33,15 @@ const Register = () => {
       }),
     });
 
-    const data = await response.json();
-    console.log(data);
+    if (response.ok) {
+      const data = await response.json();
+
+      localStorage.setItem("objectId", data.objectId);
+      localStorage.setItem("createdAt", data.createdAt);
+      localStorage.setItem("sessionToken", data.sessionToken);
+
+      router.push("/");
+    }
   };
 
   return (
