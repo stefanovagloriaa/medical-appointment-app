@@ -20,6 +20,22 @@ const Login = () => {
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
 
+    let usernameURI = encodeURIComponent(username);
+    let passwordURI = encodeURIComponent(password);
+
+    let uri = `https://parseapi.back4app.com/login?username=${usernameURI}&password=${passwordURI}`;
+
+    const response = await fetch(uri, {
+      method: "GET",
+      headers: {
+        "X-Parse-Application-Id": "1F0sC9aHng1diauZUXZJi5KZXgg4TvPIr1o9zuA6",
+        "X-Parse-REST-API-Key": "7a1wvIl5jog3wuV6ssPXYSHHtSzibhlKsJ3oKIQO",
+        "X-Parse-Revocable-Session": 1,
+      },
+    });
+
+    console.log(response);
+
     dispatch(authActions.login());
     router.push("/");
   };
