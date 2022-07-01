@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import Head from "next/head";
-import Modal from "../components/Modal";
+import AppointmentModal from "../components/AppointmentModal";
 
 const HomePage = () => {
   return (
@@ -9,7 +9,7 @@ const HomePage = () => {
         <title>Home Page</title>
       </Head>
       <h1>Home Page</h1>
-      <Modal></Modal>
+      <AppointmentModal />
     </Fragment>
   );
 };

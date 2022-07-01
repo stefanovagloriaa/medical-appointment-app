@@ -2,7 +2,6 @@ import { Fragment, useState } from "react";
 import Link from "next/link";
 import classes from "./MainNavigation.module.css";
 import { useSelector } from "react-redux";
-import Modal from "./Modal";
 
 const MainNavigation = () => {
   const isAuth = useSelector((state) => state.auth.isAuth);
