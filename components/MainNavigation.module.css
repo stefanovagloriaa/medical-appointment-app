@@ -11,16 +11,5 @@
     font-size: larger;
 }
 
-.buttonStyle {
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-    padding: 20px;
-    background-color: transparent;
-    cursor: pointer;
-    position: absolute;
-    right: 35px;
-    margin: 22px;
-    font-size: x-large;
-}
+
 

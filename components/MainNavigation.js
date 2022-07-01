@@ -1,8 +1,12 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import Link from "next/link";
 import classes from "./MainNavigation.module.css";
+import { useSelector } from "react-redux";
+import Modal from "./Modal";
 
 const MainNavigation = () => {
+  const isAuth = useSelector((state) => state.auth.isAuth);
+
   return (
     <Fragment>
       <div className={classes.topnav}>
@@ -21,10 +25,11 @@ const MainNavigation = () => {
         <Link href="/contacts">
           <li>Контакти</li>
         </Link>
-        <Link href="/login">
-          <li>Вход</li>
-        </Link>
-        <button className={classes.buttonStyle}>Запази час</button>
+        {!isAuth && (
+          <Link href="/login">
+            <li>Вход</li>
+          </Link>
+        )}
       </div>
     </Fragment>
   );
