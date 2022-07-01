@@ -14,7 +14,7 @@ const Login = () => {
 
   const dispatch = useDispatch();
 
-  const formSubmitHandler = (event) => {
+  const formSubmitHandler = async (event) => {
     event.preventDefault();
 
     const username = usernameRef.current.value;

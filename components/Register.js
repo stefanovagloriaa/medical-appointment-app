@@ -4,7 +4,7 @@ import classes from "./Register.module.css";
 
 const Register = () => {
   const firstNameRef = useRef();
-  const lastNameRef = useRef();
+  const usernameRef = useRef();
   const passwordRef = useRef();
   const repeatedPasswordRef = useRef();
 
@@ -12,18 +12,26 @@ const Register = () => {
     event.preventDefault();
 
     const firstName = firstNameRef.current.value;
-    const lastName = lastNameRef.current.value;
+    const username = usernameRef.current.value;
     const password = passwordRef.current.value;
 
-    await fetch("/api/createUser", {
+    const response = await fetch("https://parseapi.back4app.com/users", {
       method: "POST",
-      body: JSON.stringify({ firstName, lastName, password }),
       headers: {
+        "X-Parse-REST-API-Key": "7a1wvIl5jog3wuV6ssPXYSHHtSzibhlKsJ3oKIQO",
+        "X-Parse-Application-Id": "1F0sC9aHng1diauZUXZJi5KZXgg4TvPIr1o9zuA6",
         "Content-type": "application/json",
+        "X-Parse-Revocable-Session": 1,
       },
+      body: JSON.stringify({
+        firstName: firstName,
+        username: username,
+        password: password,
+      }),
     });
 
-    console.log(response);
+    const data = await response.json();
+    console.log(data);
   };
 
   return (
@@ -37,10 +45,10 @@ const Register = () => {
           className={classes.inputStyle}
           id="firstName"
         />
-        <label className={classes.labelStyle} htmlFor="lastName">
-          Last name:
+        <label className={classes.labelStyle} htmlFor="username">
+          Username:
         </label>
-        <input ref={lastNameRef} className={classes.inputStyle} id="lastName" />
+        <input ref={usernameRef} className={classes.inputStyle} id="username" />
         <label className={classes.labelStyle} htmlFor="password">
           Password:
         </label>
