@@ -34,10 +34,13 @@ const Login = () => {
       },
     });
 
-    console.log(response);
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
 
-    dispatch(authActions.login());
-    router.push("/");
+      dispatch(authActions.login());
+      router.push("/");
+    }
   };
 
   return (
