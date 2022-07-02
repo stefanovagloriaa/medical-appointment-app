@@ -37,6 +37,11 @@ const Register = () => {
     });
 
     if (response.ok) {
+      firstNameRef.current.value = "";
+      emailRef.current.value = "";
+      usernameRef.current.value = "";
+      passwordRef.current.value = "";
+      repeatedPasswordRef.current.value = "";
       const data = await response.json();
 
       localStorage.setItem("objectId", data.objectId);
@@ -59,8 +64,6 @@ const Register = () => {
           }),
         }
       );
-
-      router.push("/");
     }
   };
 
@@ -86,11 +89,17 @@ const Register = () => {
         <label className={classes.labelStyle} htmlFor="password">
           Password:
         </label>
-        <input ref={passwordRef} className={classes.inputStyle} id="password" />
+        <input
+          type="password"
+          ref={passwordRef}
+          className={classes.inputStyle}
+          id="password"
+        />
         <label className={classes.labelStyle} htmlFor="repeatPassword">
           Repeat password:
         </label>
         <input
+          type="password"
           ref={repeatedPasswordRef}
           className={classes.inputStyle}
           id="repeatPassword"
