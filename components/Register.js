@@ -37,33 +37,13 @@ const Register = () => {
     });
 
     if (response.ok) {
-      firstNameRef.current.value = "";
-      emailRef.current.value = "";
-      usernameRef.current.value = "";
-      passwordRef.current.value = "";
-      repeatedPasswordRef.current.value = "";
       const data = await response.json();
 
       localStorage.setItem("objectId", data.objectId);
       localStorage.setItem("createdAt", data.createdAt);
       localStorage.setItem("sessionToken", data.sessionToken);
 
-      const response2 = await fetch(
-        "https://parseapi.back4app.com/verificationEmailRequest",
-        {
-          method: "POST",
-          headers: {
-            "X-Parse-REST-API-Key": "7a1wvIl5jog3wuV6ssPXYSHHtSzibhlKsJ3oKIQO",
-            "X-Parse-Application-Id":
-              "1F0sC9aHng1diauZUXZJi5KZXgg4TvPIr1o9zuA6",
-            "Content-type": "application/json",
-            "X-Parse-Revocable-Session": 1,
-          },
-          body: JSON.stringify({
-            email: email,
-          }),
-        }
-      );
+      router.push("/verification");
     }
   };
 
