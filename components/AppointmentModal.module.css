@@ -23,7 +23,7 @@
     padding: 20px;
     background-color: transparent;
     cursor: pointer;
-    position:absolute;
+    position:fixed;
     top: 200px;
     right: 35px;
     margin: 10px;
