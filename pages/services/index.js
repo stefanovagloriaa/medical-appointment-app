@@ -1,9 +1,17 @@
 import { MongoClient } from "mongodb";
 import { Fragment } from "react";
 import ServicesList from "../../components/ServicesList";
+import Head from "next/head";
 
 const ServicesPage = (props) => {
-  return <ServicesList procedures={props.procedures} />;
+  return (
+    <Fragment>
+      <Head>
+        <title>Procedures</title>
+      </Head>
+      <ServicesList procedures={props.procedures} />
+    </Fragment>
+  );
 };
 
 export async function getStaticProps() {

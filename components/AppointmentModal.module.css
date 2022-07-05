@@ -1,10 +1,13 @@
 .appointment {
+    position: fixed;
+    top: 135px;
     text-align: center;
     padding: 50px;
     border: 1px solid;
     margin-left: 470px;
     margin-right: 470px;
     margin-top: 50px;
+    background-color: white;
 }
 
 .appointment button {
@@ -28,4 +31,9 @@
     right: 35px;
     margin: 10px;
     font-size: x-large;
+    transition: 2s;
+}
+
+.buttonStyle:hover {
+    background-color: whitesmoke;
 }

@@ -11,5 +11,13 @@
     font-size: larger;
 }
 
+.topnav li:active {
+    font-weight: bold;
+}
+
+.topnav li:hover {
+    font-weight: bold;
+}
+
 
 

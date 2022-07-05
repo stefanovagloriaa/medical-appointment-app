@@ -16,9 +16,13 @@ const MainNavigation = () => {
     dispatch(authActions.logout());
   };
 
+  const clickHandler = (event) => {
+    console.log(event.target);
+  };
+
   return (
     <Fragment>
-      <div className={classes.topnav}>
+      <div className={classes.topnav} onClick={clickHandler}>
         <Link href="/">
           <li>Начало</li>
         </Link>

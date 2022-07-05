@@ -66,14 +66,14 @@ const Register = () => {
           Username:
         </label>
         <input ref={usernameRef} className={classes.inputStyle} id="username" />
-        <label className={classes.labelStyle} htmlFor="password">
+        <label className={classes.labelStyle} htmlFor="password1">
           Password:
         </label>
         <input
           type="password"
           ref={passwordRef}
           className={classes.inputStyle}
-          id="password"
+          id="password1"
         />
         <label className={classes.labelStyle} htmlFor="repeatPassword">
           Repeat password:
