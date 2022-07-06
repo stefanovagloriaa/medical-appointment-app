@@ -4,7 +4,6 @@ import classes from "./Footer.module.css";
 const Footer = () => {
   return (
     <div className={classes.footerContainer}>
-      <h1>Footer</h1>
       <Link href="/services">
         <li>Услуги</li>
       </Link>
