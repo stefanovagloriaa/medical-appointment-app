@@ -7,3 +7,10 @@
    border-width: 50%;
    padding: 20px;
 }
+
+.footerContainer li {
+   display: block;
+   padding: 2px;
+   margin-left: 25px;
+   cursor: pointer;
+}
