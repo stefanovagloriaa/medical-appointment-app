@@ -39,10 +39,6 @@ const Register = () => {
     if (response.ok) {
       const data = await response.json();
 
-      localStorage.setItem("objectId", data.objectId);
-      localStorage.setItem("createdAt", data.createdAt);
-      localStorage.setItem("sessionToken", data.sessionToken);
-
       router.push("/verification");
     }
   };

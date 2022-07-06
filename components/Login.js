@@ -38,6 +38,10 @@ const Login = () => {
       const data = await response.json();
       console.log(data);
 
+      localStorage.setItem("objectId", data.objectId);
+      localStorage.setItem("username", data.username);
+      localStorage.setItem("sessionToken", data.sessionToken);
+
       dispatch(authActions.login());
       router.push("/");
     }
