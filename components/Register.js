@@ -1,24 +1,45 @@
-import { useRef } from "react";
+import { useState } from "react";
 import { Fragment } from "react";
 import { useRouter } from "next/router";
 import classes from "./Register.module.css";
 
 const Register = () => {
-  const firstNameRef = useRef();
-  const emailRef = useRef();
-  const usernameRef = useRef();
-  const passwordRef = useRef();
-  const repeatedPasswordRef = useRef();
+  const [firstName, setFirstName] = useState("");
+  const [firstNameIsValid, setFirstNameIsValid] = useState(true);
+
+  const [email, setEmail] = useState("");
+  const [emailIsValid, setEmailIsValid] = useState(true);
+
+  const [username, setUsername] = useState("");
+  const [usernameIsValid, setUsernameIsValid] = useState(true);
+
+  const [password, setPassword] = useState("");
+  const [passwordIsValid, setPasswordIsValid] = useState(true);
+
+  const [repeatedPassword, setRepeatedPassword] = useState("");
+  const [repeatedPasswordIsValid, setRepeatedPasswordIsValid] = useState(true);
 
   const router = useRouter();
 
   const formSubmithandler = async (event) => {
     event.preventDefault();
 
-    const firstName = firstNameRef.current.value;
-    const username = usernameRef.current.value;
-    const password = passwordRef.current.value;
-    const email = emailRef.current.value;
+    if (firstName.length < 3) {
+      setFirstNameIsValid(false);
+    }
+    if (!email.includes("@")) {
+      setEmailIsValid(false);
+    }
+
+    if (
+      username.trim() == "" ||
+      password.trim() == "" ||
+      repeatedPassword.trim() == ""
+    ) {
+      setUsernameIsValid(false);
+      setPasswordIsValid(false);
+      setRepeatedPasswordIsValid(false);
+    }
 
     const response = await fetch("https://parseapi.back4app.com/users", {
       method: "POST",
@@ -50,36 +71,49 @@ const Register = () => {
           First name:
         </label>
         <input
-          ref={firstNameRef}
+          onChange={(event) => setFirstName(event.target.value)}
           className={classes.inputStyle}
           id="firstName"
         />
+        {!firstNameIsValid && <p>Name can not be empty!</p>}
         <label className={classes.labelStyle} htmlFor="email">
           E-mail:
         </label>
-        <input ref={emailRef} className={classes.inputStyle} id="email" />
+        <input
+          onChange={(event) => setEmail(event.target.value)}
+          className={classes.inputStyle}
+          id="email"
+        />
+        {!emailIsValid && <p>Email invalid</p>}
         <label className={classes.labelStyle} htmlFor="username">
           Username:
         </label>
-        <input ref={usernameRef} className={classes.inputStyle} id="username" />
+        <input
+          onChange={(event) => setUsername(event.target.value)}
+          className={classes.inputStyle}
+          id="username"
+        />
+        {!usernameIsValid && <p>Username invalid</p>}
         <label className={classes.labelStyle} htmlFor="password1">
           Password:
         </label>
         <input
           type="password"
-          ref={passwordRef}
+          onChange={(event) => setPassword(event.target.value)}
           className={classes.inputStyle}
           id="password1"
         />
+        {!passwordIsValid && <p>Password invalid</p>}
         <label className={classes.labelStyle} htmlFor="repeatPassword">
           Repeat password:
         </label>
         <input
           type="password"
-          ref={repeatedPasswordRef}
+          onChange={(event) => setRepeatedPassword(event.target.value)}
           className={classes.inputStyle}
           id="repeatPassword"
         />
+        {!repeatedPasswordIsValid && <p>Password invalid</p>}
         <button>Create Account</button>
       </form>
     </Fragment>

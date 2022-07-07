@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 
 const MainNavigation = () => {
   const isAuth = useSelector((state) => state.auth.isAuth);
-
   const dispatch = useDispatch();
 
   const logoutHandler = (event) => {
