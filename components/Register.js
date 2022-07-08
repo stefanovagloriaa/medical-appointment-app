@@ -1,45 +1,53 @@
-import { useState } from "react";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { useRouter } from "next/router";
+import useInput from "../hooks/use-input";
 import classes from "./Register.module.css";
 
 const Register = () => {
-  const [firstName, setFirstName] = useState("");
-  const [firstNameIsValid, setFirstNameIsValid] = useState(true);
+  const {
+    value: firstName,
+    hasError: firstNameIsInvalid,
+    changeHandler: firstNameChangeHandler,
+    blurHandler: firstNameBlurHandler,
+    reset: resetFirstName,
+  } = useInput((value) => value !== "");
 
-  const [email, setEmail] = useState("");
-  const [emailIsValid, setEmailIsValid] = useState(true);
+  const {
+    value: email,
+    hasError: emailIsInvalid,
+    changeHandler: emailChangeHandler,
+    blurHandler: emailBlurHandler,
+    reset: resetEmail,
+  } = useInput((value) => value.includes("@"));
 
-  const [username, setUsername] = useState("");
-  const [usernameIsValid, setUsernameIsValid] = useState(true);
+  const {
+    value: username,
+    hasError: usernameIsInvalid,
+    changeHandler: usernameChangeHandler,
+    blurHandler: usernameBlurHandler,
+    reset: resetUsername,
+  } = useInput((value) => value.length > 5);
 
-  const [password, setPassword] = useState("");
-  const [passwordIsValid, setPasswordIsValid] = useState(true);
+  const {
+    value: password,
+    hasError: passwordIsInvalid,
+    changeHandler: passwordChangeHandler,
+    blurHandler: passwordBlurHandler,
+    reset: resetPassword,
+  } = useInput((value) => value.length >= 4);
 
-  const [repeatedPassword, setRepeatedPassword] = useState("");
-  const [repeatedPasswordIsValid, setRepeatedPasswordIsValid] = useState(true);
+  const {
+    value: repeatedPassword,
+    hasError: repeatedPasswordIsInvalid,
+    changeHandler: repeatedPasswordChangeHandler,
+    blurHandler: repeatedPasswordBlurHandler,
+    reset: resetRepeatedPassword,
+  } = useInput((value) => value.length >= 4);
 
   const router = useRouter();
 
   const formSubmithandler = async (event) => {
     event.preventDefault();
-
-    if (firstName.length < 3) {
-      setFirstNameIsValid(false);
-    }
-    if (!email.includes("@")) {
-      setEmailIsValid(false);
-    }
-
-    if (
-      username.trim() == "" ||
-      password.trim() == "" ||
-      repeatedPassword.trim() == ""
-    ) {
-      setUsernameIsValid(false);
-      setPasswordIsValid(false);
-      setRepeatedPasswordIsValid(false);
-    }
 
     const response = await fetch("https://parseapi.back4app.com/users", {
       method: "POST",
@@ -71,49 +79,59 @@ const Register = () => {
           First name:
         </label>
         <input
-          onChange={(event) => setFirstName(event.target.value)}
+          onChange={firstNameChangeHandler}
+          onBlur={firstNameBlurHandler}
           className={classes.inputStyle}
           id="firstName"
+          value={firstName}
         />
-        {!firstNameIsValid && <p>Name can not be empty!</p>}
+        {firstNameIsInvalid && <p>Name can not be empty!</p>}
         <label className={classes.labelStyle} htmlFor="email">
           E-mail:
         </label>
         <input
-          onChange={(event) => setEmail(event.target.value)}
+          onChange={emailChangeHandler}
+          onBlur={emailBlurHandler}
           className={classes.inputStyle}
           id="email"
+          value={email}
         />
-        {!emailIsValid && <p>Email invalid</p>}
+        {emailIsInvalid && <p>Email invalid</p>}
         <label className={classes.labelStyle} htmlFor="username">
           Username:
         </label>
         <input
-          onChange={(event) => setUsername(event.target.value)}
+          onChange={usernameChangeHandler}
+          onBlur={usernameBlurHandler}
           className={classes.inputStyle}
           id="username"
+          value={username}
         />
-        {!usernameIsValid && <p>Username invalid</p>}
+        {usernameIsInvalid && <p>Username invalid</p>}
         <label className={classes.labelStyle} htmlFor="password1">
           Password:
         </label>
         <input
           type="password"
-          onChange={(event) => setPassword(event.target.value)}
+          onChange={passwordChangeHandler}
+          onBlur={passwordBlurHandler}
           className={classes.inputStyle}
           id="password1"
+          value={password}
         />
-        {!passwordIsValid && <p>Password invalid</p>}
+        {passwordIsInvalid && <p>Password invalid</p>}
         <label className={classes.labelStyle} htmlFor="repeatPassword">
           Repeat password:
         </label>
         <input
           type="password"
-          onChange={(event) => setRepeatedPassword(event.target.value)}
+          onChange={repeatedPasswordChangeHandler}
+          onBlur={repeatedPasswordBlurHandler}
           className={classes.inputStyle}
           id="repeatPassword"
+          value={repeatedPassword}
         />
-        {!repeatedPasswordIsValid && <p>Password invalid</p>}
+        {repeatedPasswordIsInvalid && <p>Password invalid</p>}
         <button>Create Account</button>
       </form>
     </Fragment>

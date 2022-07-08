@@ -21,6 +21,10 @@
     border-radius: 7px;
 }
 
+.inputStyle:focus {
+    background-color:antiquewhite;
+}
+
 .formStyle p {
     color: red;
     padding-top: 0px;
