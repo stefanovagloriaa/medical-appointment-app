@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { useRouter } from "next/router";
 import useInput from "../hooks/use-input";
 import classes from "./Register.module.css";
@@ -6,6 +6,7 @@ import classes from "./Register.module.css";
 const Register = () => {
   const {
     value: firstName,
+    isValid: firstNameIsValid,
     hasError: firstNameIsInvalid,
     changeHandler: firstNameChangeHandler,
     blurHandler: firstNameBlurHandler,
@@ -14,6 +15,7 @@ const Register = () => {
 
   const {
     value: email,
+    isValid: emailIsValid,
     hasError: emailIsInvalid,
     changeHandler: emailChangeHandler,
     blurHandler: emailBlurHandler,
@@ -22,6 +24,7 @@ const Register = () => {
 
   const {
     value: username,
+    isValid: usernameIsValid,
     hasError: usernameIsInvalid,
     changeHandler: usernameChangeHandler,
     blurHandler: usernameBlurHandler,
@@ -30,6 +33,7 @@ const Register = () => {
 
   const {
     value: password,
+    isValid: passwordIsValid,
     hasError: passwordIsInvalid,
     changeHandler: passwordChangeHandler,
     blurHandler: passwordBlurHandler,
@@ -38,6 +42,7 @@ const Register = () => {
 
   const {
     value: repeatedPassword,
+    isValid: repeatedPasswordIsValid,
     hasError: repeatedPasswordIsInvalid,
     changeHandler: repeatedPasswordChangeHandler,
     blurHandler: repeatedPasswordBlurHandler,
@@ -46,29 +51,43 @@ const Register = () => {
 
   const router = useRouter();
 
+  const formIsValid = false;
+
+  if (
+    firstNameIsValid &&
+    usernameIsValid &&
+    emailIsValid &&
+    passwordIsValid &&
+    repeatedPasswordIsValid
+  ) {
+    formIsValid = true;
+  }
+
   const formSubmithandler = async (event) => {
     event.preventDefault();
 
-    const response = await fetch("https://parseapi.back4app.com/users", {
-      method: "POST",
-      headers: {
-        "X-Parse-REST-API-Key": "7a1wvIl5jog3wuV6ssPXYSHHtSzibhlKsJ3oKIQO",
-        "X-Parse-Application-Id": "1F0sC9aHng1diauZUXZJi5KZXgg4TvPIr1o9zuA6",
-        "Content-type": "application/json",
-        "X-Parse-Revocable-Session": 1,
-      },
-      body: JSON.stringify({
-        firstName: firstName,
-        email: email,
-        username: username,
-        password: password,
-      }),
-    });
+    if (formIsValid) {
+      const response = await fetch("https://parseapi.back4app.com/users", {
+        method: "POST",
+        headers: {
+          "X-Parse-REST-API-Key": "7a1wvIl5jog3wuV6ssPXYSHHtSzibhlKsJ3oKIQO",
+          "X-Parse-Application-Id": "1F0sC9aHng1diauZUXZJi5KZXgg4TvPIr1o9zuA6",
+          "Content-type": "application/json",
+          "X-Parse-Revocable-Session": 1,
+        },
+        body: JSON.stringify({
+          firstName: firstName,
+          email: email,
+          username: username,
+          password: password,
+        }),
+      });
 
-    if (response.ok) {
-      const data = await response.json();
+      if (response.ok) {
+        const data = await response.json();
 
-      router.push("/verification");
+        router.push("/verification");
+      }
     }
   };
 
@@ -132,7 +151,7 @@ const Register = () => {
           value={repeatedPassword}
         />
         {repeatedPasswordIsInvalid && <p>Password invalid</p>}
-        <button>Create Account</button>
+        <button disabled={!formIsValid}>Create Account</button>
       </form>
     </Fragment>
   );
