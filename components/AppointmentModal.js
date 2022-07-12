@@ -6,10 +6,6 @@ const AppointmentModal = () => {
   const [showModal, setShowModal] = useState(false);
   const form = useRef();
 
-  const closeModal = () => {
-    setShowModal(false);
-  };
-
   const submitHandler = (ev) => {
     ev.preventDefault();
 
