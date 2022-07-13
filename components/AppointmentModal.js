@@ -42,13 +42,15 @@ const AppointmentModal = () => {
           onSubmit={submitHandler}
           className={classes.appointment}
         >
-          <h1>Save your hour</h1>
-          <label>Име</label>
-          <input type="text" name="firstName" />
-          <label>Имейл</label>
-          <input type="email" name="userEmail" />
-          <label>Съобщение</label>
-          <textarea name="message"></textarea>
+          <h1>Изпратете запитване за свободен час:</h1>
+          <label htmlFor="name">Име:</label>
+          <input id="name" type="text" name="firstName" />
+          <label htmlFor="email">Имейл:</label>
+          <input id="email" type="email" name="userEmail" />
+          <label htmlFor="data">Запитване за дата:</label>
+          <input id="data" type="date" name="data" />
+          <label htmlFor="message">Съобщение:</label>
+          <textarea id="message" name="message"></textarea>
           <input type="submit" value="Send" />
           <button onClick={() => setShowModal(false)}>No</button>
         </form>
