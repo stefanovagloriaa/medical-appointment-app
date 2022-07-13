@@ -37,23 +37,39 @@ const AppointmentModal = () => {
         </button>
       </div>
       {showModal && (
-        <form
-          ref={form}
-          onSubmit={submitHandler}
-          className={classes.appointment}
-        >
-          <h1>Изпратете запитване за свободен час:</h1>
-          <label htmlFor="name">Име:</label>
-          <input id="name" type="text" name="firstName" />
-          <label htmlFor="email">Имейл:</label>
-          <input id="email" type="email" name="userEmail" />
-          <label htmlFor="data">Запитване за дата:</label>
-          <input id="data" type="date" name="data" />
-          <label htmlFor="message">Съобщение:</label>
-          <textarea id="message" name="message"></textarea>
-          <input type="submit" value="Send" />
-          <button onClick={() => setShowModal(false)}>No</button>
-        </form>
+        <div>
+          <form
+            ref={form}
+            onSubmit={submitHandler}
+            className={classes.appointment}
+          >
+            <div>
+              <h1>Изпратете запитване за свободен час:</h1>
+            </div>
+            <div>
+              <label htmlFor="name">Име:</label>
+              <input id="name" type="text" name="firstName" />
+            </div>
+            <div>
+              <label htmlFor="email">Имейл:</label>
+              <input id="email" type="email" name="userEmail" />
+            </div>
+            <div>
+              <label htmlFor="data">Запитване за дата:</label>
+              <input id="data" type="date" name="data" />
+            </div>
+            <div>
+              <label htmlFor="message">Съобщение:</label>
+              <textarea id="message" name="message"></textarea>
+            </div>
+            <div>
+              <input type="submit" value="Send" />
+            </div>
+            <div>
+              <button onClick={() => setShowModal(false)}>No</button>
+            </div>
+          </form>
+        </div>
       )}
     </div>
   );

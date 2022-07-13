@@ -1,22 +1,18 @@
 .appointment {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
     position: fixed;
-    width: 500px;
+    width: 50%;
+    height: 80%;
     top: 100px;
-    text-align: center;
     padding: 50px;
     border: 1px solid;
-    margin-left: 450px;
-    margin-right: 450px;
-    margin-top: -30px;
     background-color: white;
 }
 
 .appointment button {
     display: block;
-    width: 80%;
-    padding: 6px;
-    margin: 10px;
-    box-sizing: border-box;
     border: 1px solid black;
 }
 
@@ -38,5 +34,11 @@
 .buttonStyle:hover {
     background-color: whitesmoke;
 }
+
+
+.appointment label {
+    display: block;
+}
+
 
 
