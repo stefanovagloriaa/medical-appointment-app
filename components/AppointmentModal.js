@@ -37,7 +37,7 @@ const AppointmentModal = () => {
         </button>
       </div>
       {showModal && (
-        <div>
+        <div className={classes.container}>
           <form
             ref={form}
             onSubmit={submitHandler}

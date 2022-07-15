@@ -1,18 +1,20 @@
+.element {
+    display: flex;
+    border-style: solid;
+    margin: 33px;
+    padding: 20px;
+    border-width: 1px;
+}
+
 .element span {
     margin: 22px;
     text-decoration: none;
     color: black;
 }
 
-.element {
-    margin: 33px;
-    border-style: solid;
-    padding: 20px;
-    border-width: 1px;
-}
 
 @media (min-width: 500px) and (max-width: 800px){
     .element span {
-        color: brown;
+        justify-content: center;
     }
 }
