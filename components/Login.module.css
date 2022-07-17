@@ -8,6 +8,10 @@
     border-radius: 15%;
 }
 
+.formStyle button {
+    margin: 5px;
+}
+
 .labelStyle {
     padding: 20px;
 }
