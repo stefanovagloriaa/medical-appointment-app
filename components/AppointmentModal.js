@@ -19,6 +19,7 @@ const AppointmentModal = () => {
       .then(
         (result) => {
           console.log(result.text);
+          setShowModal(false);
         },
         (error) => {
           console.log(error.text);
