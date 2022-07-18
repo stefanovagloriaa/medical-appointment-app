@@ -6,8 +6,10 @@ import classes from "./Layout.module.css";
 const Layout = (props) => {
   return (
     <Fragment>
-      <Navigation />
-      <main>{props.children}</main>
+      <div className={classes.background}>
+        <Navigation />
+        <main>{props.children}</main>
+      </div>
       <Footer />
     </Fragment>
   );
