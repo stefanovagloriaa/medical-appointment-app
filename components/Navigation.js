@@ -5,8 +5,8 @@ import MainNavigation from "./MainNavigation";
 const Navigation = () => {
   return (
     <Fragment>
-      <AddressNavigation />
-      <MainNavigation />
+        <AddressNavigation />
+        <MainNavigation />
     </Fragment>
   );
 };

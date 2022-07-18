@@ -3,7 +3,6 @@ import classes from "./Home.module.css";
 const Home = () => {
   return (
     <div className={classes.homeContent}>
-      <h1>Home Page</h1>
       <p>
         Началото на хирургията в България като научна и на приложението й
         специалност става след Освобождението на Българието от руски лекари

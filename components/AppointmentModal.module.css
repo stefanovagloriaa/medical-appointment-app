@@ -28,9 +28,7 @@
 }
 
 .buttonStyle {
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
+    border: solid black 1px;
     padding: 20px;
     background-color: transparent;
     cursor: pointer;
@@ -43,7 +41,9 @@
 }
 
 .buttonStyle:hover {
-    background-color: whitesmoke;
+    background-color: rgb(87, 170, 242);
+    color: azure;
+    border: solid  rgb(87, 170, 242) 1px;
 }
 
 .title {

@@ -5,13 +5,13 @@ import classes from "./Layout.module.css";
 
 const Layout = (props) => {
   return (
-    <Fragment>
-      <div className={classes.background}>
+    <div className={classes.background}>
+      <div>
         <Navigation />
         <main>{props.children}</main>
       </div>
       <Footer />
-    </Fragment>
+    </div>
   );
 };
 
