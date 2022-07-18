@@ -44,8 +44,8 @@ const AppointmentModal = () => {
             onSubmit={submitHandler}
             className={classes.appointment}
           >
-            <div>
-              <h1>Изпратете запитване за свободен час:</h1>
+            <div className={classes.title}>
+              <p>Изпратете запитване за свободен час:</p>
             </div>
             <div>
               <label htmlFor="name">Име:</label>

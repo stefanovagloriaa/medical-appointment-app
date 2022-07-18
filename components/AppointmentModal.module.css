@@ -17,9 +17,14 @@
     background-color: white;
 }
 
+.appointment input {
+    margin-top: 8px;
+}
+
 .appointment button {
     display: block;
     border: 1px solid black;
+    margin: 3px;
 }
 
 .buttonStyle {
@@ -41,6 +46,10 @@
     background-color: whitesmoke;
 }
 
+.title {
+    margin-top: 0px;
+    font-size:x-large;
+}
 
 .appointment label {
     display: block;

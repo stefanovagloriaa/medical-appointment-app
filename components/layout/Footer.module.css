@@ -1,17 +1,26 @@
-.footerContainer {
-   border-style:solid;
-   border-width: 1px;
-   border-left: none;
-   border-right: none;
-   border-bottom: none;
-   border-width: 50%;
-   padding: 20px;
-   margin: 60px;
+.container {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   background-color: rgb(87, 170, 242);
+   color: azure;
+   font-size: large;
 }
 
-.footerContainer li {
+.container b {
+   padding-bottom: 2px;
+   border-bottom: solid;
+   border-width: 2px;
+}
+
+.container div {
+    margin: 40px;
+}
+
+.services li {
    display: block;
-   padding: 2px;
-   margin-left: 15px;
+   margin-top: 10px;
+   text-decoration: none;
+   font-size: large;
    cursor: pointer;
 }
