@@ -12,19 +12,30 @@
 
 .inputStyle {
 
+    width: 70%;
+    padding: 4px;
+    margin: 0px;
     box-sizing: border-box;
     border: 1px solid black;
-    border-radius: 7px;
+    border-radius: 15px;
 }
 
 .inputStyle:focus {
     background-color:antiquewhite;
 }
 
+.labelStyle {
+    padding: 9px;
+}
+
 .formStyle p {
     color: red;
     padding-top: 0px;
     margin-top: 2px;
+}
+
+.formStyle button {
+    margin: 10px;
 }
 
 @media (max-width: 1134){
