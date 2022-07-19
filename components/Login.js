@@ -49,19 +49,33 @@ const Login = () => {
 
   return (
     <Fragment>
-      <form onSubmit={formSubmitHandler} className={classes.formStyle}>
-        <label className={classes.labelStyle} htmlFor="username">
-          Username
-        </label>
-        <input ref={usernameRef} className={classes.inputStyle} id="username" />
-        <label className={classes.labelStyle} htmlFor="password">
-          Password
-        </label>
-        <input ref={passwordRef} className={classes.inputStyle} id="password" />
-        <button>LogIn</button>
-        <Link href="/signUp">
-          <button>You have not account yet?</button>
-        </Link>
+      <form onSubmit={formSubmitHandler} className={classes.container}>
+        <div>
+          <label className={classes.labelStyle} htmlFor="username">
+            Username
+          </label>
+          <input
+            ref={usernameRef}
+            className={classes.inputStyle}
+            id="username"
+          />
+        </div>
+        <div>
+          <label className={classes.labelStyle} htmlFor="password">
+            Password
+          </label>
+          <input
+            ref={passwordRef}
+            className={classes.inputStyle}
+            id="password"
+          />
+        </div>
+        <div>
+          <button>LogIn</button>
+          <Link href="/signUp">
+            <button>You have not account yet?</button>
+          </Link>
+        </div>
       </form>
     </Fragment>
   );
