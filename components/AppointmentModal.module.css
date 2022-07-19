@@ -23,12 +23,14 @@
 
 .appointment button {
     display: block;
-    border: 1px solid black;
+    color: white;
+    background-color: rgb(172,172,172);
     margin: 3px;
 }
 
 .buttonStyle {
-    border: solid black 1px;
+    border: none;
+    color: white;
     padding: 20px;
     background-color: transparent;
     cursor: pointer;
@@ -37,7 +39,8 @@
     right: 35px;
     margin: 10px;
     font-size: x-large;
-    transition: 2s;
+    transition: 0.5s;
+    background-color: rgb(172,172,172);
 }
 
 .buttonStyle:hover {

@@ -34,8 +34,8 @@ const MainNavigation = () => {
         <Link href="/about">
           <li>Вашият лекар</li>
         </Link>
-        <Link href="/contacts">
-          <li>Контакти</li>
+        <Link href="/articles">
+          <li>Статии</li>
         </Link>
         {!isAuth && (
           <Link href="/login">

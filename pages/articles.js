@@ -1,4 +1,4 @@
-import Contacts from "../components/Contacts";
+import Articles from "../components/Articles";
 import Head from "next/head";
 import { Fragment } from "react";
 
@@ -8,7 +8,7 @@ const ContactsPage = () => {
       <Head>
         <title>Contacts</title>
       </Head>
-      <Contacts />
+      <Articles />
     </Fragment>
   );
 };

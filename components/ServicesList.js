@@ -1,13 +1,14 @@
 import Link from "next/link";
+import classes from "../components/ServicesList.module.css";
 
 const ServicesList = (props) => {
   console.log(props.procedures);
   return (
-    <nav>
+    <nav className={classes.container}>
       {props.procedures.map((p) => (
-        <li key={p.id}>
-          <Link href={"/services/" + p.id}>{p.title}</Link>
-        </li>
+        <Link href={"/services/" + p.id}>
+          <li key={p.id}>{p.title}</li>
+        </Link>
       ))}
     </nav>
   );

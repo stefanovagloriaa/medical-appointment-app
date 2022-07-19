@@ -1,13 +1,16 @@
 .element {
     display: flex;
-    padding: 20px;
     background-color: rgb(172,172,172);
+    opacity: 0.9;
+    border-bottom: solid 0.5px white;
 }
 
 .element span {
-    margin: 22px;
     text-decoration: none;
+    padding: 50px;
     color:white;
+    border-right: solid 0.5px white;
+    padding: 15px;
 }
 
 

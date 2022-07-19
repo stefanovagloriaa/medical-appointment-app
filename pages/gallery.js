@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Head from "next/head";
+import Gallery from "../components/Gallery";
 
 const GalleryPage = () => {
   return (
@@ -7,7 +8,7 @@ const GalleryPage = () => {
       <Head>
         <title>Gallery</title>
       </Head>
-      <h1>Gallery Page!</h1>
+      <Gallery />
     </Fragment>
   );
 };

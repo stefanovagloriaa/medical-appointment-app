@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Head from "next/head";
+import About from "../components/About";
 
 const AboutPage = () => {
   return (
@@ -7,7 +8,7 @@ const AboutPage = () => {
       <Head>
         <title>About</title>
       </Head>
-      <h1>About Page!</h1>
+      <About />
     </Fragment>
   );
 };

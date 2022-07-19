@@ -1,0 +1,10 @@
+.container {
+    margin: 150px;
+    text-align: center;
+}
+
+.container li {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+}

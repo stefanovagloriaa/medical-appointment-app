@@ -1,13 +1,15 @@
 .topnav {
-    margin: 33px;
-
+    padding: 30px;
+    background-color: rgb(172,172,172);
+    opacity: 0.9;
+    border-top: solid 0.5px white;
 }
 
 .topnav li {
     display: inline;
     margin: 22px;
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: larger;
     cursor: pointer;
 }

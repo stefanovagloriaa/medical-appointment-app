@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    margin: 100px;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 20px;
+    border: solid 2px whitesmoke;
+}
+
+.imageContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 20px;
+    border: solid 2px whitesmoke;
+}
+
+.imageContainer li {
+    display: block;
+    padding: 2px;
+}
+
+.imageContainer li:hover {
+    color: rgb(87, 170, 242);
+    cursor: pointer;
+}

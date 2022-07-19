@@ -1,14 +1,8 @@
 import { MongoClient, ObjectId } from "mongodb";
-import { Fragment } from "react";
+import ServicesDetail from "../../components/ServicesDetail";
 
 const ProcedureDetail = (props) => {
-  return (
-    <Fragment>
-      <img src={props.procedureData.imageUrl}></img>
-      <h1>{props.procedureData.title}</h1>
-      <p>{props.procedureData.description}</p>
-    </Fragment>
-  );
+  return <ServicesDetail serviceDetail={props} />;
 };
 
 export async function getStaticPaths() {
