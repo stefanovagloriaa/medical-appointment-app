@@ -21,6 +21,23 @@
     color: red;
 }
 
+.container button {
+    color: white;
+    background-color: rgb(87, 170, 242);
+    font-size: large;
+    width: 60%;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.container button:disabled {
+    color: white;
+    background-color: rgb(172,172,172);
+}
+
 
 @media (max-width: 1134){
     .formStyle {
