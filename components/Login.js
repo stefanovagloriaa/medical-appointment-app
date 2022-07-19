@@ -52,7 +52,7 @@ const Login = () => {
       <form onSubmit={formSubmitHandler} className={classes.container}>
         <div>
           <label className={classes.labelStyle} htmlFor="username">
-            Username
+            Име
           </label>
           <input
             ref={usernameRef}
@@ -62,7 +62,7 @@ const Login = () => {
         </div>
         <div>
           <label className={classes.labelStyle} htmlFor="password">
-            Password
+            Парола
           </label>
           <input
             ref={passwordRef}
@@ -72,6 +72,8 @@ const Login = () => {
         </div>
         <div>
           <button>LogIn</button>
+        </div>
+        <div>
           <Link href="/signUp">
             <button>You have not account yet?</button>
           </Link>

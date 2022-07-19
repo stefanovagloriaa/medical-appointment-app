@@ -93,65 +93,78 @@ const Register = () => {
 
   return (
     <Fragment>
-      <form className={classes.formStyle} onSubmit={formSubmithandler}>
-        <label className={classes.labelStyle} htmlFor="firstName">
-          First name:
-        </label>
-        <input
-          onChange={firstNameChangeHandler}
-          onBlur={firstNameBlurHandler}
-          className={classes.inputStyle}
-          id="firstName"
-          value={firstName}
-        />
-        {firstNameIsInvalid && <p>Name can not be empty!</p>}
-        <label className={classes.labelStyle} htmlFor="email">
-          E-mail:
-        </label>
-        <input
-          onChange={emailChangeHandler}
-          onBlur={emailBlurHandler}
-          className={classes.inputStyle}
-          id="email"
-          value={email}
-        />
-        {emailIsInvalid && <p>Email invalid</p>}
-        <label className={classes.labelStyle} htmlFor="username">
-          Username:
-        </label>
-        <input
-          onChange={usernameChangeHandler}
-          onBlur={usernameBlurHandler}
-          className={classes.inputStyle}
-          id="username"
-          value={username}
-        />
-        {usernameIsInvalid && <p>Username invalid</p>}
-        <label className={classes.labelStyle} htmlFor="password1">
-          Password:
-        </label>
-        <input
-          type="password"
-          onChange={passwordChangeHandler}
-          onBlur={passwordBlurHandler}
-          className={classes.inputStyle}
-          id="password1"
-          value={password}
-        />
-        {passwordIsInvalid && <p>Password invalid</p>}
-        <label className={classes.labelStyle} htmlFor="repeatPassword">
-          Repeat password:
-        </label>
-        <input
-          type="password"
-          onChange={repeatedPasswordChangeHandler}
-          onBlur={repeatedPasswordBlurHandler}
-          className={classes.inputStyle}
-          id="repeatPassword"
-          value={repeatedPassword}
-        />
-        {repeatedPasswordIsInvalid && <p>Password invalid</p>}
-        <button disabled={!formIsValid}>Create Account</button>
+      <form className={classes.container} onSubmit={formSubmithandler}>
+        <div>
+          <label className={classes.labelStyle} htmlFor="firstName">
+            Име:
+          </label>
+          <input
+            onChange={firstNameChangeHandler}
+            onBlur={firstNameBlurHandler}
+            className={classes.inputStyle}
+            id="firstName"
+            value={firstName}
+          />
+          {firstNameIsInvalid && <p>Name can not be empty!</p>}
+        </div>
+        <div>
+          <label className={classes.labelStyle} htmlFor="email">
+            Имейл:
+          </label>
+          <input
+            onChange={emailChangeHandler}
+            onBlur={emailBlurHandler}
+            className={classes.inputStyle}
+            id="email"
+            value={email}
+          />
+          {emailIsInvalid && <p>Email invalid</p>}
+        </div>
+        <div>
+          <label className={classes.labelStyle} htmlFor="username">
+            Потребителско име:
+          </label>
+          <input
+            onChange={usernameChangeHandler}
+            onBlur={usernameBlurHandler}
+            className={classes.inputStyle}
+            id="username"
+            value={username}
+          />
+          {usernameIsInvalid && <p>Username invalid</p>}
+        </div>
+        <div>
+          <label className={classes.labelStyle} htmlFor="password1">
+            Парола:
+          </label>
+          <input
+            type="password"
+            onChange={passwordChangeHandler}
+            onBlur={passwordBlurHandler}
+            className={classes.inputStyle}
+            id="password1"
+            value={password}
+          />
+          {passwordIsInvalid && <p>Password invalid</p>}
+        </div>
+
+        <div>
+          <label className={classes.labelStyle} htmlFor="repeatPassword">
+            Повтори паролата:
+          </label>
+          <input
+            type="password"
+            onChange={repeatedPasswordChangeHandler}
+            onBlur={repeatedPasswordBlurHandler}
+            className={classes.inputStyle}
+            id="repeatPassword"
+            value={repeatedPassword}
+          />
+          {repeatedPasswordIsInvalid && <p>Password invalid</p>}
+        </div>
+        <div>
+          <button disabled={!formIsValid}>Create Account</button>
+        </div>
       </form>
     </Fragment>
   );

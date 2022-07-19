@@ -1,43 +1,26 @@
-.formStyle {
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    border: 1px solid;
-    margin-left: 470px;
-    margin-right: 470px;
-    margin-top: 50px;
-    margin-bottom: 100px;
-    border-radius: 7px;
+    margin: 200px;
+    margin-top: 80px;
 }
 
-.inputStyle {
-
-    width: 70%;
-    padding: 4px;
-    margin: 0px;
-    box-sizing: border-box;
-    border: 1px solid black;
-    border-radius: 15px;
+.container div {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: 30%;
 }
 
-.inputStyle:focus {
-    background-color:antiquewhite;
+.container label {
+    padding: 2px;
 }
 
-.labelStyle {
-    padding: 9px;
-}
-
-.formStyle p {
+.container p {
     color: red;
-    padding-top: 0px;
-    margin-top: 2px;
 }
 
-.formStyle button {
-    margin: 10px;
-}
 
 @media (max-width: 1134){
     .formStyle {
