@@ -1,4 +1,38 @@
-.homeContent {
-    padding: 50px;
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.consultation {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    background-color: rgb(87, 170, 242);
+    margin: 30px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.consultation div {
+    margin: 10px;
+    width: 40%;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
     width: 80%;
+    margin: 30px;
+    justify-content: center;
+}
+
+.information div {
+    margin: 10px;
+    width: 40%;
+    text-align: center;
+}
+
+.information h1{
+    text-align: center;
+    color: rgb(87, 170, 242);
 }

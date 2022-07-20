@@ -10,7 +10,6 @@ const HomePage = () => {
         <title>Home Page</title>
       </Head>
       <Home />
-      <AppointmentModal />
     </Fragment>
   );
 };
