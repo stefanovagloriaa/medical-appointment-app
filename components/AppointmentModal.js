@@ -64,7 +64,7 @@ const AppointmentModal = () => {
               <textarea id="message" name="message"></textarea>
             </div>
             <div>
-              <input type="submit" value="Send" />
+              <button onClick={submitHandler}>Send</button>
             </div>
             <div>
               <button onClick={() => setShowModal(false)}>No</button>
