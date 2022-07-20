@@ -18,6 +18,24 @@
     width: 40%;
 }
 
+.consultation button {
+    color: white;
+    background-color:  rgb(87, 170, 242);
+    cursor: pointer;
+    padding: 20px;
+    border: solid 1px white;
+    border-radius: 7px; 
+}
+
+.consultation button:hover {
+    color: rgb(87, 170, 242);
+    background-color:  white;
+    cursor: pointer;
+    padding: 20px;
+    border: solid 1px white;
+    border-radius: 7px; 
+}
+
 .information {
     display: flex;
     flex-direction: column;
