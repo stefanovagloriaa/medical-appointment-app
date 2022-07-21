@@ -94,6 +94,11 @@ const Register = () => {
   return (
     <Fragment>
       <form className={classes.container} onSubmit={formSubmithandler}>
+        {firstNameIsInvalid && <p>Name can not be empty!</p>}
+        {emailIsInvalid && <p>Email invalid</p>}
+        {usernameIsInvalid && <p>Username invalid</p>}
+        {passwordIsInvalid && <p>Password invalid</p>}
+        {repeatedPasswordIsInvalid && <p>Password invalid</p>}
         <div>
           <label className={classes.labelStyle} htmlFor="firstName">
             Име:
@@ -105,7 +110,6 @@ const Register = () => {
             id="firstName"
             value={firstName}
           />
-          {firstNameIsInvalid && <p>Name can not be empty!</p>}
         </div>
         <div>
           <label className={classes.labelStyle} htmlFor="email">
@@ -118,7 +122,6 @@ const Register = () => {
             id="email"
             value={email}
           />
-          {emailIsInvalid && <p>Email invalid</p>}
         </div>
         <div>
           <label className={classes.labelStyle} htmlFor="username">
@@ -131,7 +134,6 @@ const Register = () => {
             id="username"
             value={username}
           />
-          {usernameIsInvalid && <p>Username invalid</p>}
         </div>
         <div>
           <label className={classes.labelStyle} htmlFor="password1">
@@ -145,7 +147,6 @@ const Register = () => {
             id="password1"
             value={password}
           />
-          {passwordIsInvalid && <p>Password invalid</p>}
         </div>
 
         <div>
@@ -160,7 +161,6 @@ const Register = () => {
             id="repeatPassword"
             value={repeatedPassword}
           />
-          {repeatedPasswordIsInvalid && <p>Password invalid</p>}
         </div>
         <div>
           <button disabled={!formIsValid}>Create Account</button>

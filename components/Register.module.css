@@ -19,6 +19,9 @@
 
 .container p {
     color: red;
+    padding: 0px;
+    margin: 2px;
+    text-align: left;
 }
 
 .container button {
